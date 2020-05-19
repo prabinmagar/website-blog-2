@@ -1,0 +1,348 @@
+/* we will import google fonts in our css file */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+/*
+font-family: 'Montserrat', sans-serif;
+font-family: 'Quicksand', sans-serif;
+*/
+
+/* You can find awesome pictures in pexels.com */
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* global styling */
+
+img{
+    width: 100%;
+}
+a{
+    text-decoration: none;
+    color: #000;
+}
+ul{
+    list-style: none;
+}
+
+/* header */
+
+header .header-main{
+    background: #132c6b;
+    box-shadow: 2px 2px 30px grey;
+}
+
+.navigation{
+    padding: 20px 0;
+}
+
+.navigation ul{
+    text-align: center;
+}
+
+.navigation ul li{
+    display: inline-block;
+    padding: 10px 30px;
+    margin: 10px 0;
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.navigation ul li a{
+    color: white;
+    font-weight: 500;
+    text-shadow: 1px 1px 5px #18306d;
+}
+
+.navigation ul li:hover{
+    background: rgba(255, 255, 255, 0);
+}
+
+.line-hover::after{
+    content: '';
+    display: block;
+    width: 0px;
+    margin: 0 auto;
+    height: 2px;
+    background-color: white;
+    transition: width .3s;
+    opacity: 0.8;
+}
+
+.line-hover:hover::after{
+    width: 100%;
+    transition: width .3s;
+    opacity: 0.8;
+}
+
+/* quad blog */
+
+.quad-blog-container{
+    padding: 5px;
+    background: #011638;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.quad-blog-container h2{
+    text-align: center;
+    margin: 20px;
+    color: white;
+}
+
+.quad-blog-container h4{
+    text-align: center;
+    color: white;
+    margin: 20px;
+}
+
+.quad-blog-container a{
+    font-size: 15px;
+    color: #e81e58;
+    font-weight: bold;
+}
+
+.quad-blog-container a:hover{
+    text-decoration: underline;
+}
+
+.main-wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 20px;
+}
+
+.wrapper-left, .wrapper-right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quad-effect{
+    background: #eff8e2;
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    padding: 30px 10px;
+}
+
+.quad-effect .blog-img,
+.quad-effect .blog-text{
+    width: 50%;
+    padding: 10px;
+}
+
+/* we'll make it responsive at the end */
+
+/* latest posts and editorials */
+
+.main-container{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+/* posts section */
+
+.latest-single{
+    display: flex;
+    margin: 10px;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid grey;
+    background: rgba(220, 220, 220, 0.1);
+}
+
+.late-img{
+    width: 50%;
+}
+
+.late-img img{
+    display: block;
+    clip-path: polygon(0% 0%, 100% 20%, 100% 80%, 0 100%);
+    transition: clip-path 1s ease;
+}
+
+.late-img img:hover{
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0 100%);
+}
+
+.late-content{
+    width: 50%;
+    font-size: 15px;
+    padding: 10px;
+}
+
+.late-content p{
+    padding: 15px 0;
+}
+
+.late-content a:hover{
+    font-weight: bold;
+}
+
+
+/* info section */
+
+.info{
+    background: #18306d;
+    margin: 10px;
+}
+.info img{
+    width: 20%;
+    display: block;
+    margin: 0px auto;
+    padding: 15px 0;
+}
+
+.info h5{
+    text-align: center;
+    font-size: 14px;
+    color: white;
+    width: 70%;
+    margin: 0 auto;
+    line-height: 1.6rem;
+    padding: 25px;
+}
+
+/* editorial */
+
+.editor-single{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    margin: 10px;
+    border: 1px solid darkblue;
+    background: aliceblue;
+}
+
+.editor-single:hover{
+    background: white;
+}
+
+.edit-content,
+.edit-img{
+    width: 50%;
+}
+
+/* footer */
+
+footer{
+    font-family: 'Quicksand', sans-serif;
+    background: #272727;
+    color: #fff;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 15px 0;
+    text-align: center;
+}
+
+footer div h3{
+    padding: 20px 0;
+}
+
+footer div a{
+    color: #fff;
+    padding: 5px 0;
+    display: block;
+}
+
+footer div a::after{
+    content: ">> ";
+    display: none;
+}
+
+footer div a:hover::after{
+    display: inline;
+}
+
+
+/* let's make our site quite responsive */
+
+
+@media screen and (max-width: 1170px){
+    .main-wrapper{
+        grid-template-columns: 1fr;
+    }
+
+    .wrapper-middle{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 992px){
+    .main-container{
+        grid-template-columns: 1fr;
+    }
+
+    .editor-container{
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .wrapper-middle{
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 576px){
+    .navigation ul li{
+        width: 100%;
+        display: block;
+    }
+
+    .line-hover:hover::after{
+        width: 30%;
+    }
+
+    .quad-blog{
+        /* we will get rid of this quad blog */
+        display: none;
+    }
+
+    .latest-single{
+        flex-direction: column;
+    }
+    .late-img img{
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0 100%);
+    }
+    .late-img{
+        width: 90%;
+        padding: 10px;
+    }
+    .late-content{
+        width: 90%;
+    }
+
+    .editor-container{
+        grid-template-columns: 100%;
+    }
+
+    footer{
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
